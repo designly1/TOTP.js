@@ -16,12 +16,12 @@ This class requires sha.js, which can be found here: http://caligatio.github.io/
 
 ## Getters:
 
-`totp.getOTP() // Returns current OTP`
-`totp.getQR() // Returns URL to Google Charts QR Code (for scanning into Google Authenticator)`
-`totp.getCountDown() // Returns time (in seconds) until next OTP update`
+`totp.getOTP()` - Returns current OTP
+`totp.getQR()` -  Returns URL to Google Charts QR Code (for scanning into Google Authenticator)
+`totp.getCountDown()` - Returns time (in seconds) until next OTP update
 
 ## Setters:
 
-`totp.setKey(secretKey) // Sets 16-digit user secret (key)`
-`totp.setLog(true|false) // Sets logging output to console.log()`
-`totp.getUser(username) // Sets username display (for QR code), default is "user@example.com" if not set`
+`totp.setKey(secretKey)` - Sets 16-digit user secret (key)
+`totp.setLog(true|false)` - Sets logging output to console.log()
+`totp.getUser(username)` - Sets username display (for QR code), default is "user@example.com" if not set
