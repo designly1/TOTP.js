@@ -12,8 +12,8 @@ This class requires sha.js, which can be found here: http://caligatio.github.io/
  
 # Usage Example:
 
-Instantiates object and keeps it alive in DOM
 ```javascript
+// Instantiates object and keeps it alive in DOM
 var totp = new TOTP('user secret', 'optional user name for display');
 ```
 
