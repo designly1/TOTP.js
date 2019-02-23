@@ -40,5 +40,5 @@ totp.setKey(secretKey);
 totp.setLog(true|false);
 
 // Sets username display (for QR code), default is "user@example.com" if not set
-totp.getUser(username);
+totp.setUser(username);
 ```
