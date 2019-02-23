@@ -23,7 +23,7 @@
  * 
  * totp.setKey(secretKey) // Sets 16-digit user secret (key)
  * totp.setLog(true|false) // Sets logging output to console.log()
- * totp.getUser(username) // Sets username display (for QR code), default is "user@example.com" if not set
+ * totp.setUser(username) // Sets username display (for QR code), default is "user@example.com" if not set
  */
 
 var googleChartsURL = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/';
