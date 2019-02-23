@@ -11,17 +11,34 @@ https://Cloudulus.Media
 This class requires sha.js, which can be found here: http://caligatio.github.io/jsSHA/sha.js
  
 # Usage Example:
- 
-`var totp = new TOTP('user secret', 'optional user name for display'); // Instantiates object and keeps it alive in DOM`
+
+Instantiates object and keeps it alive in DOM
+```javascript
+var totp = new TOTP('user secret', 'optional user name for display');
+```
 
 ## Getters:
 
-`totp.getOTP()` - Returns current OTP
-`totp.getQR()` -  Returns URL to Google Charts QR Code (for scanning into Google Authenticator)
-`totp.getCountDown()` - Returns time (in seconds) until next OTP update
+```javascript
+// Returns current OTP
+totp.getOTP();
+
+// Returns URL to Google Charts QR Code (for scanning into Google Authenticator)
+totp.getQR();
+
+// Returns time (in seconds) until next OTP update
+totp.getCountDown();
+```
 
 ## Setters:
 
-`totp.setKey(secretKey)` - Sets 16-digit user secret (key)
-`totp.setLog(true|false)` - Sets logging output to console.log()
-`totp.getUser(username)` - Sets username display (for QR code), default is "user@example.com" if not set
+```javascript
+// Sets 16-digit user secret (key)
+totp.setKey(secretKey);
+
+// Sets logging output to console.log()
+totp.setLog(true|false);
+
+// Sets username display (for QR code), default is "user@example.com" if not set
+totp.getUser(username);
+```
