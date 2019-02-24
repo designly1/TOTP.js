@@ -24,6 +24,18 @@
  * totp.setKey(secretKey) // Sets 16-digit user secret (key)
  * totp.setLog(true|false) // Sets logging output to console.log()
  * totp.setUser(username) // Sets username display (for QR code), default is "user@example.com" if not set
+ * 
+ * Callbacks:
+ * 
+ * // Calls function with totp object every second
+ * totp.setCountDownCallback(function(totp){
+ *      <do some stuff>
+ * });
+ * 
+ * // Calls function with totp object on update() (every 30 seconds)
+ * totp.setUpdateCallback(function(totp){
+ *      <do some stuff>
+ * });
  */
 
 var googleChartsURL = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/';
@@ -38,6 +50,8 @@ class TOTP
         this.otp = 0;
         this.countDown = 0;
         this.log = false;
+        this.countDownCallback = null;
+        this.updateCallback = null;
 
         if (typeof user === typeof undefined) user = defaultUser;
         this.user = user;
@@ -50,7 +64,23 @@ class TOTP
             me.countDown = 30 - (epoch % 30);
             if (epoch % 30 == 0) me.update();
             if (me.log) console.log('Update OTP in ' + me.countDown + ' seconds...');
+            if (typeof me.countDownCallback === 'function')
+            {
+                me.countDownCallback(me);
+            }else{
+                console.log(me.countDownCallback);
+            }
         }, 1000);
+    }
+
+    setUpdateCallback(callback)
+    {
+        this.updateCallback = callback;
+    }
+
+    setCountDownCallback(callback)
+    {
+        this.countDownCallback = callback;
     }
 
     dec2hex(s)
@@ -115,6 +145,10 @@ class TOTP
         otp = (otp).substr(otp.length - 6, 6);
         this.otp = otp;
         if (this.log) console.log('New OTP: '+ this.otp);
+        if (typeof this.updateCallback === 'function')
+        {
+            this.updateCallback(this);
+        }
         return true;
     }
 
