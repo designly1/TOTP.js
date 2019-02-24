@@ -1,0 +1,211 @@
+.form-stacked
+{
+    display: flex;
+    flex-direction: column;
+}
+.form-stacked > div
+{
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+.form-stacked > div.stacked
+{
+    flex-direction: column;
+}
+
+.form-stacked > div > label
+{
+    display: flex;
+    margin-bottom: 0.5em;
+    color: #00d3ef;
+}
+.form-stacked > div > label > span:not(:last-of-type)
+{
+    margin-right: 0.5em;
+}
+
+.form-stacked input
+{
+    transition:all 1s ease-out;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+select,
+textarea
+{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0.5em;
+    padding-left: 1em;
+    height: 2.7em;
+    color: #0d3f71;
+    font-size: 1em;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    width: 100%;
+    text-decoration: none;
+    display: inline;
+    vertical-align: middle;
+    caret-color: #fff;
+    box-sizing: content-box;
+    font-family: 'Exo 2', sans-serif;
+}
+@media (max-width: 500px)
+{
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="url"],
+    input[type="number"],
+    select,
+    textarea
+    {
+        width: 97%;
+    }
+}
+
+input:disabled, textarea:disabled
+{
+    opacity: 0.5;
+}
+
+input:focus, textarea:focus
+{
+    background-color: #2989d8;
+    outline: none;
+    color: white !important;
+}
+input::placeholder
+{
+    color: rgb(151, 151, 151);
+}
+input:focus::placeholder
+{
+    color: white !important;
+}
+
+.fields
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.fields > div
+{
+    display: flex;
+}
+.fields > div > button:not(:first-of-type)
+{
+    margin-left: 1em; 
+}
+.fields > div:not(:last-of-type)
+{
+    margin-bottom: 1em;
+}
+.fields > div > div > label
+{
+    font-size: 1.2em;
+    color: #ff6600;
+    font-weight: 700;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.fields > div > div:first-of-type
+{
+    margin-right: 0.5em;
+    display: flex;
+    flex-basis: 30%;
+}
+.fields > div > div:last-of-type
+{
+    flex-basis: 70%;
+    position: relative;
+}
+@media(min-width: 601px)
+{
+    .fields
+    {
+        width: 500px;
+    }
+    .field-icon
+    {
+        right: 10px;
+    }
+    .fields > div > div > i
+    {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+}
+@media(max-width: 600px)
+{
+    .fields
+    {
+        width: 100%;
+    }
+    .field-icon
+    {
+        right: 20px;
+    }
+    .fields > div
+    {
+        display: block;
+    }
+    .fields > div > div > label
+    {
+        font-size: 1.2em;
+        color: #ff6600;
+        font-weight: 700;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .fields > div > div > i
+    {
+        position: absolute;
+        right: 15px;
+        top: 37px;
+    }
+    .fields > div > div:first-of-type
+    {
+        display: flex;
+        margin-bottom: 0.5em;
+    }
+    .fields > div > div:last-of-type
+    {
+        flex-basis: inherit;
+    }
+}
+
+.field-ok
+{
+    background-color: rgba(44, 141, 81, 0.705);
+}
+
+.req-field
+{
+    background-color: rgba(141, 44, 44, 0.705);
+}
+
+.focused
+{
+    position: fixed;
+    top: 5em;
+    left: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}

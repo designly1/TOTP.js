@@ -1,0 +1,137 @@
+body
+{
+    font-family: 'Exo 2', sans-serif;
+}
+::selection {
+    background: #1f2b35; /* WebKit/Blink Browsers */
+    color: white;
+}
+::-moz-selection {
+    background: #1f2b35; /* Gecko Browsers */
+    color: white;
+}
+
+header.site-header
+{
+    background-color: #333333;
+    display: flex;
+}
+
+.site-logo
+{
+    display: flex;
+    padding: 0.2em;
+}
+.site-logo > a > img
+{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.viewport
+{
+    background-color: #4b4b4b;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5em;
+}
+
+.box
+{
+    position: relative;
+    border: 2px solid #1f1f42;
+    background-color: #1f2b35;
+    padding: 0.5em 1em 0.5em 1em;
+    -webkit-box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.46);
+    -moz-box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.46);
+    box-shadow: 10px 10px 9px -9px rgba(0,0,0,0.46);
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    height: fit-content;
+    color: white;
+}
+.box h1
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgb(52, 171, 40);
+    font-size: 1.5em;
+    color: #4568b3;
+}
+
+.box h2
+{
+    font-size: 1.2em;
+    color: #43e234;
+}
+
+.box-buttons
+{
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    display: flex;
+}
+.box-buttons > div
+{
+    color: #2dcafe;
+    font-size: 2rem;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    cursor: pointer;
+}
+.box-buttons > div:not(:last-of-type)
+{
+    margin-right: 0.6em;
+}
+.box-buttons > div:hover
+{
+    color: white;
+}
+.box-buttons > div > i
+{
+    margin: auto;
+}
+
+.profile
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+.profile > div
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+.profile > div > div:first-of-type
+{
+    color:hotpink;
+    flex-basis: 30%;
+}
+
+.profile > div > div:last-of-type
+{
+    margin-left: 1em;
+}
+
+.status-Enabled
+{
+    color: green;
+}
+.status-Disabled
+{
+    color: red;
+}
