@@ -67,8 +67,6 @@ class TOTP
             if (typeof me.countDownCallback === 'function')
             {
                 me.countDownCallback(me);
-            }else{
-                console.log(me.countDownCallback);
             }
         }, 1000);
     }
@@ -76,6 +74,7 @@ class TOTP
     setUpdateCallback(callback)
     {
         this.updateCallback = callback;
+        this.update();
     }
 
     setCountDownCallback(callback)
@@ -183,6 +182,12 @@ class TOTP
     setLog(bool)
     {
         this.log = bool;
+        return true;
+    }
+
+    stop()
+    {
+        clearInterval(this.interval);
         return true;
     }
 }
