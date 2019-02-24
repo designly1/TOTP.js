@@ -42,3 +42,17 @@ totp.setLog(true|false);
 // Sets username display (for QR code), default is "user@example.com" if not set
 totp.setUser(username);
 ```
+
+## Callbacks:
+
+```javascript
+// Calls function with totp object every second
+totp.setCountDownCallback(function(totp){
+     <do some stuff>
+});
+  
+// Calls function with totp object on update() (every 30 seconds)
+totp.setUpdateCallback(function(totp){
+     <do some stuff>
+});
+ ```
